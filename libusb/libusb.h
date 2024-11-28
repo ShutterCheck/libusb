@@ -220,110 +220,110 @@ enum libusb_class_code {
 	 * this bDeviceClass value indicates that each interface specifies its
 	 * own class information and all interfaces operate independently.
 	 */
-	LIBUSB_CLASS_PER_INTERFACE = 0x00,
+	LIBUSB_CLASS_PER_INTERFACE __attribute__((swift_name("perInterface"))) = 0x00,
 
 	/** Audio class */
-	LIBUSB_CLASS_AUDIO = 0x01,
+	LIBUSB_CLASS_AUDIO __attribute__((swift_name("audio"))) = 0x01,
 
 	/** Communications class */
-	LIBUSB_CLASS_COMM = 0x02,
+	LIBUSB_CLASS_COMM __attribute__((swift_name("communications"))) = 0x02,
 
 	/** Human Interface Device class */
-	LIBUSB_CLASS_HID = 0x03,
+	LIBUSB_CLASS_HID __attribute__((swift_name("hid"))) = 0x03,
 
 	/** Physical */
-	LIBUSB_CLASS_PHYSICAL = 0x05,
+	LIBUSB_CLASS_PHYSICAL __attribute__((swift_name("physical"))) = 0x05,
 
 	/** Image class */
-	LIBUSB_CLASS_IMAGE = 0x06,
-	LIBUSB_CLASS_PTP = 0x06, /* legacy name from libusb-0.1 usb.h */
+	LIBUSB_CLASS_IMAGE __attribute__((swift_name("image"))) = 0x06,
+	LIBUSB_CLASS_PTP __attribute__((swift_name("ptp"))) = 0x06, /* legacy name from libusb-0.1 usb.h */
 
 	/** Printer class */
-	LIBUSB_CLASS_PRINTER = 0x07,
+	LIBUSB_CLASS_PRINTER __attribute__((swift_name("printer"))) = 0x07,
 
 	/** Mass storage class */
-	LIBUSB_CLASS_MASS_STORAGE = 0x08,
+	LIBUSB_CLASS_MASS_STORAGE __attribute__((swift_name("massStorage"))) = 0x08,
 
 	/** Hub class */
-	LIBUSB_CLASS_HUB = 0x09,
+	LIBUSB_CLASS_HUB __attribute__((swift_name("hub"))) = 0x09,
 
 	/** Data class */
-	LIBUSB_CLASS_DATA = 0x0a,
+	LIBUSB_CLASS_DATA __attribute__((swift_name("data"))) = 0x0a,
 
 	/** Smart Card */
-	LIBUSB_CLASS_SMART_CARD = 0x0b,
+	LIBUSB_CLASS_SMART_CARD __attribute__((swift_name("smartCard"))) = 0x0b,
 
 	/** Content Security */
-	LIBUSB_CLASS_CONTENT_SECURITY = 0x0d,
+	LIBUSB_CLASS_CONTENT_SECURITY __attribute__((swift_name("contentSecurity"))) = 0x0d,
 
 	/** Video */
-	LIBUSB_CLASS_VIDEO = 0x0e,
+	LIBUSB_CLASS_VIDEO __attribute__((swift_name("video"))) = 0x0e,
 
 	/** Personal Healthcare */
-	LIBUSB_CLASS_PERSONAL_HEALTHCARE = 0x0f,
+	LIBUSB_CLASS_PERSONAL_HEALTHCARE __attribute__((swift_name("personalHealthcare"))) = 0x0f,
 
 	/** Diagnostic Device */
-	LIBUSB_CLASS_DIAGNOSTIC_DEVICE = 0xdc,
+	LIBUSB_CLASS_DIAGNOSTIC_DEVICE __attribute__((swift_name("diagnosticDevice"))) = 0xdc,
 
 	/** Wireless class */
-	LIBUSB_CLASS_WIRELESS = 0xe0,
+	LIBUSB_CLASS_WIRELESS __attribute__((swift_name("wireless"))) = 0xe0,
 
 	/** Miscellaneous class */
-	LIBUSB_CLASS_MISCELLANEOUS = 0xef,
+	LIBUSB_CLASS_MISCELLANEOUS __attribute__((swift_name("miscellaneous"))) = 0xef,
 
 	/** Application class */
-	LIBUSB_CLASS_APPLICATION = 0xfe,
+	LIBUSB_CLASS_APPLICATION __attribute__((swift_name("application"))) = 0xfe,
 
 	/** Class is vendor-specific */
-	LIBUSB_CLASS_VENDOR_SPEC = 0xff
-};
+	LIBUSB_CLASS_VENDOR_SPEC __attribute__((swift_name("vendorSpecific"))) = 0xff
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("ClassCode")));
 
 /** \ingroup libusb_desc
  * Descriptor types as defined by the USB specification. */
 enum libusb_descriptor_type {
 	/** Device descriptor. See libusb_device_descriptor. */
-	LIBUSB_DT_DEVICE = 0x01,
+	LIBUSB_DT_DEVICE __attribute__((swift_name("device"))) = 0x01,
 
 	/** Configuration descriptor. See libusb_config_descriptor. */
-	LIBUSB_DT_CONFIG = 0x02,
+	LIBUSB_DT_CONFIG __attribute__((swift_name("configuration"))) = 0x02,
 
 	/** String descriptor */
-	LIBUSB_DT_STRING = 0x03,
+	LIBUSB_DT_STRING __attribute__((swift_name("string"))) = 0x03,
 
 	/** Interface descriptor. See libusb_interface_descriptor. */
-	LIBUSB_DT_INTERFACE = 0x04,
+	LIBUSB_DT_INTERFACE __attribute__((swift_name("interface"))) = 0x04,
 
 	/** Endpoint descriptor. See libusb_endpoint_descriptor. */
-	LIBUSB_DT_ENDPOINT = 0x05,
+	LIBUSB_DT_ENDPOINT __attribute__((swift_name("endpoint"))) = 0x05,
 
 	/** Interface Association Descriptor.
 	* See libusb_interface_association_descriptor */
-	LIBUSB_DT_INTERFACE_ASSOCIATION = 0x0b,
+	LIBUSB_DT_INTERFACE_ASSOCIATION __attribute__((swift_name("interfaceAssociation"))) = 0x0b,
 
 	/** BOS descriptor */
-	LIBUSB_DT_BOS = 0x0f,
+	LIBUSB_DT_BOS __attribute__((swift_name("bos"))) = 0x0f,
 
 	/** Device Capability descriptor */
-	LIBUSB_DT_DEVICE_CAPABILITY = 0x10,
+	LIBUSB_DT_DEVICE_CAPABILITY __attribute__((swift_name("deviceCapability"))) = 0x10,
 
 	/** HID descriptor */
-	LIBUSB_DT_HID = 0x21,
+	LIBUSB_DT_HID __attribute__((swift_name("hid"))) = 0x21,
 
 	/** HID report descriptor */
-	LIBUSB_DT_REPORT = 0x22,
+	LIBUSB_DT_REPORT __attribute__((swift_name("hidReport"))) = 0x22,
 
 	/** Physical descriptor */
-	LIBUSB_DT_PHYSICAL = 0x23,
+	LIBUSB_DT_PHYSICAL __attribute__((swift_name("physical"))) = 0x23,
 
 	/** Hub descriptor */
-	LIBUSB_DT_HUB = 0x29,
+	LIBUSB_DT_HUB __attribute__((swift_name("hub"))) = 0x29,
 
 	/** SuperSpeed Hub descriptor */
-	LIBUSB_DT_SUPERSPEED_HUB = 0x2a,
+	LIBUSB_DT_SUPERSPEED_HUB __attribute__((swift_name("superSpeedHub"))) = 0x2a,
 
 	/** SuperSpeed Endpoint Companion descriptor */
-	LIBUSB_DT_SS_ENDPOINT_COMPANION = 0x30
-};
+	LIBUSB_DT_SS_ENDPOINT_COMPANION __attribute__((swift_name("superSpeedEndpointCompanion"))) = 0x30
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("DescriptorType")));
 
 /* Descriptor sizes per descriptor type */
 #define LIBUSB_DT_DEVICE_SIZE			18
@@ -360,11 +360,11 @@ enum libusb_descriptor_type {
  */
 enum libusb_endpoint_direction {
 	/** Out: host-to-device */
-	LIBUSB_ENDPOINT_OUT = 0x00,
+	LIBUSB_ENDPOINT_OUT __attribute__((swift_name("out"))) = 0x00,
 
 	/** In: device-to-host */
-	LIBUSB_ENDPOINT_IN = 0x80
-};
+	LIBUSB_ENDPOINT_IN __attribute__((swift_name("in"))) = 0x80
+} __attribute__((enum_extensibility(closed))) __attribute__((swift_name("EndpointDirection")));
 
 #define LIBUSB_TRANSFER_TYPE_MASK		0x03	/* in bmAttributes */
 
@@ -374,65 +374,65 @@ enum libusb_endpoint_direction {
  */
 enum libusb_endpoint_transfer_type {
 	/** Control endpoint */
-	LIBUSB_ENDPOINT_TRANSFER_TYPE_CONTROL = 0x0,
+	LIBUSB_ENDPOINT_TRANSFER_TYPE_CONTROL __attribute__((swift_name("control"))) = 0x0,
 
 	/** Isochronous endpoint */
-	LIBUSB_ENDPOINT_TRANSFER_TYPE_ISOCHRONOUS = 0x1,
+	LIBUSB_ENDPOINT_TRANSFER_TYPE_ISOCHRONOUS __attribute__((swift_name("isochronous"))) = 0x1,
 
 	/** Bulk endpoint */
-	LIBUSB_ENDPOINT_TRANSFER_TYPE_BULK = 0x2,
+	LIBUSB_ENDPOINT_TRANSFER_TYPE_BULK __attribute__((swift_name("bulk"))) = 0x2,
 
 	/** Interrupt endpoint */
-	LIBUSB_ENDPOINT_TRANSFER_TYPE_INTERRUPT = 0x3
-};
+	LIBUSB_ENDPOINT_TRANSFER_TYPE_INTERRUPT __attribute__((swift_name("interrupt"))) = 0x3
+} __attribute__((enum_extensibility(closed))) __attribute__((swift_name("EndpointTransferType")));
 
 /** \ingroup libusb_misc
  * Standard requests, as defined in table 9-5 of the USB 3.0 specifications */
 enum libusb_standard_request {
 	/** Request status of the specific recipient */
-	LIBUSB_REQUEST_GET_STATUS = 0x00,
+	LIBUSB_REQUEST_GET_STATUS __attribute__((swift_name("getStatus"))) = 0x00,
 
 	/** Clear or disable a specific feature */
-	LIBUSB_REQUEST_CLEAR_FEATURE = 0x01,
+	LIBUSB_REQUEST_CLEAR_FEATURE __attribute__((swift_name("clearFeature"))) = 0x01,
 
 	/* 0x02 is reserved */
 
 	/** Set or enable a specific feature */
-	LIBUSB_REQUEST_SET_FEATURE = 0x03,
+	LIBUSB_REQUEST_SET_FEATURE __attribute__((swift_name("setFeature"))) = 0x03,
 
 	/* 0x04 is reserved */
 
 	/** Set device address for all future accesses */
-	LIBUSB_REQUEST_SET_ADDRESS = 0x05,
+	LIBUSB_REQUEST_SET_ADDRESS __attribute__((swift_name("setAddress"))) = 0x05,
 
 	/** Get the specified descriptor */
-	LIBUSB_REQUEST_GET_DESCRIPTOR = 0x06,
+	LIBUSB_REQUEST_GET_DESCRIPTOR __attribute__((swift_name("getDescriptor"))) = 0x06,
 
 	/** Used to update existing descriptors or add new descriptors */
-	LIBUSB_REQUEST_SET_DESCRIPTOR = 0x07,
+	LIBUSB_REQUEST_SET_DESCRIPTOR __attribute__((swift_name("setDescriptor"))) = 0x07,
 
 	/** Get the current device configuration value */
-	LIBUSB_REQUEST_GET_CONFIGURATION = 0x08,
+	LIBUSB_REQUEST_GET_CONFIGURATION __attribute__((swift_name("getConfiguration"))) = 0x08,
 
 	/** Set device configuration */
-	LIBUSB_REQUEST_SET_CONFIGURATION = 0x09,
+	LIBUSB_REQUEST_SET_CONFIGURATION __attribute__((swift_name("setConfiguration"))) = 0x09,
 
 	/** Return the selected alternate setting for the specified interface */
-	LIBUSB_REQUEST_GET_INTERFACE = 0x0a,
+	LIBUSB_REQUEST_GET_INTERFACE __attribute__((swift_name("getInterface"))) = 0x0a,
 
 	/** Select an alternate interface for the specified interface */
-	LIBUSB_REQUEST_SET_INTERFACE = 0x0b,
+	LIBUSB_REQUEST_SET_INTERFACE __attribute__((swift_name("setInterface"))) = 0x0b,
 
 	/** Set then report an endpoint's synchronization frame */
-	LIBUSB_REQUEST_SYNCH_FRAME = 0x0c,
+	LIBUSB_REQUEST_SYNCH_FRAME __attribute__((swift_name("synchFrame"))) = 0x0c,
 
 	/** Sets both the U1 and U2 Exit Latency */
-	LIBUSB_REQUEST_SET_SEL = 0x30,
+	LIBUSB_REQUEST_SET_SEL __attribute__((swift_name("setSel"))) = 0x30,
 
 	/** Delay from the time a host transmits a packet to the time it is
 	  * received by the device. */
-	LIBUSB_SET_ISOCH_DELAY = 0x31
-};
+	LIBUSB_SET_ISOCH_DELAY __attribute__((swift_name("setIsochDelay"))) = 0x31
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("StandardRequest")));
 
 /** \ingroup libusb_misc
  * Request type bits of the
@@ -440,17 +440,17 @@ enum libusb_standard_request {
  * transfers. */
 enum libusb_request_type {
 	/** Standard */
-	LIBUSB_REQUEST_TYPE_STANDARD = (0x00 << 5),
+	LIBUSB_REQUEST_TYPE_STANDARD __attribute__((swift_name("standard"))) = (0x00 << 5),
 
 	/** Class */
-	LIBUSB_REQUEST_TYPE_CLASS = (0x01 << 5),
+	LIBUSB_REQUEST_TYPE_CLASS __attribute__((swift_name("class"))) = (0x01 << 5),
 
 	/** Vendor */
-	LIBUSB_REQUEST_TYPE_VENDOR = (0x02 << 5),
+	LIBUSB_REQUEST_TYPE_VENDOR __attribute__((swift_name("vendor"))) = (0x02 << 5),
 
 	/** Reserved */
-	LIBUSB_REQUEST_TYPE_RESERVED = (0x03 << 5)
-};
+	LIBUSB_REQUEST_TYPE_RESERVED __attribute__((swift_name("reserved"))) = (0x03 << 5)
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("RequestType")));
 
 /** \ingroup libusb_misc
  * Recipient bits of the
@@ -458,17 +458,17 @@ enum libusb_request_type {
  * transfers. Values 4 through 31 are reserved. */
 enum libusb_request_recipient {
 	/** Device */
-	LIBUSB_RECIPIENT_DEVICE = 0x00,
+	LIBUSB_RECIPIENT_DEVICE __attribute__((swift_name("device"))) = 0x00,
 
 	/** Interface */
-	LIBUSB_RECIPIENT_INTERFACE = 0x01,
+	LIBUSB_RECIPIENT_INTERFACE __attribute__((swift_name("interface"))) = 0x01,
 
 	/** Endpoint */
-	LIBUSB_RECIPIENT_ENDPOINT = 0x02,
+	LIBUSB_RECIPIENT_ENDPOINT __attribute__((swift_name("endpoint"))) = 0x02,
 
 	/** Other */
-	LIBUSB_RECIPIENT_OTHER = 0x03
-};
+	LIBUSB_RECIPIENT_OTHER __attribute__((swift_name("other"))) = 0x03
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("RequestRecipient")));
 
 #define LIBUSB_ISO_SYNC_TYPE_MASK	0x0c
 
@@ -479,17 +479,17 @@ enum libusb_request_recipient {
  */
 enum libusb_iso_sync_type {
 	/** No synchronization */
-	LIBUSB_ISO_SYNC_TYPE_NONE = 0x0,
+	LIBUSB_ISO_SYNC_TYPE_NONE __attribute__((swift_name("noSynchronization"))) = 0x0,
 
 	/** Asynchronous */
-	LIBUSB_ISO_SYNC_TYPE_ASYNC = 0x1,
+	LIBUSB_ISO_SYNC_TYPE_ASYNC __attribute__((swift_name("asynchronous"))) = 0x1,
 
 	/** Adaptive */
-	LIBUSB_ISO_SYNC_TYPE_ADAPTIVE = 0x2,
+	LIBUSB_ISO_SYNC_TYPE_ADAPTIVE __attribute__((swift_name("adaptive"))) = 0x2,
 
 	/** Synchronous */
-	LIBUSB_ISO_SYNC_TYPE_SYNC = 0x3
-};
+	LIBUSB_ISO_SYNC_TYPE_SYNC __attribute__((swift_name("synchronous"))) = 0x3
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("IsoSyncType")));
 
 #define LIBUSB_ISO_USAGE_TYPE_MASK	0x30
 
@@ -500,14 +500,14 @@ enum libusb_iso_sync_type {
  */
 enum libusb_iso_usage_type {
 	/** Data endpoint */
-	LIBUSB_ISO_USAGE_TYPE_DATA = 0x0,
+	LIBUSB_ISO_USAGE_TYPE_DATA __attribute__((swift_name("data"))) = 0x0,
 
 	/** Feedback endpoint */
-	LIBUSB_ISO_USAGE_TYPE_FEEDBACK = 0x1,
+	LIBUSB_ISO_USAGE_TYPE_FEEDBACK __attribute__((swift_name("feedback"))) = 0x1,
 
 	/** Implicit feedback Data endpoint */
-	LIBUSB_ISO_USAGE_TYPE_IMPLICIT = 0x2
-};
+	LIBUSB_ISO_USAGE_TYPE_IMPLICIT __attribute__((swift_name("implicit"))) = 0x2
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("IsoUsageType")));
 
 /** \ingroup libusb_desc
  * Supported speeds (wSpeedSupported) bitfield. Indicates what
@@ -515,17 +515,17 @@ enum libusb_iso_usage_type {
  */
 enum libusb_supported_speed {
 	/** Low speed operation supported (1.5MBit/s). */
-	LIBUSB_LOW_SPEED_OPERATION = (1 << 0),
+	LIBUSB_LOW_SPEED_OPERATION __attribute__((swift_name("lowSpeed"))) = (1 << 0),
 
 	/** Full speed operation supported (12MBit/s). */
-	LIBUSB_FULL_SPEED_OPERATION = (1 << 1),
+	LIBUSB_FULL_SPEED_OPERATION __attribute__((swift_name("fullSpeed"))) = (1 << 1),
 
 	/** High speed operation supported (480MBit/s). */
-	LIBUSB_HIGH_SPEED_OPERATION = (1 << 2),
+	LIBUSB_HIGH_SPEED_OPERATION __attribute__((swift_name("highSpeed"))) = (1 << 2),
 
 	/** Superspeed operation supported (5000MBit/s). */
-	LIBUSB_SUPER_SPEED_OPERATION = (1 << 3)
-};
+	LIBUSB_SUPER_SPEED_OPERATION __attribute__((swift_name("superSpeed"))) = (1 << 3)
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("SupportedSpeed")));
 
 /** \ingroup libusb_desc
  * Masks for the bits of the
@@ -622,7 +622,7 @@ struct libusb_device_descriptor {
 
 	/** Number of possible configurations */
 	uint8_t  bNumConfigurations;
-};
+} __attribute__((swift_name("DeviceDescriptor")));
 
 /** \ingroup libusb_desc
  * A structure representing the standard USB endpoint descriptor. This
@@ -715,7 +715,7 @@ struct libusb_interface_association_descriptor {
 
 	/** Index of string descriptor describing this function */
 	uint8_t  iFunction;
-};
+} __attribute__((swift_name("InterfaceAssociationDescriptor")));
 
 /** \ingroup libusb_desc
  * Structure containing an array of 0 or more interface association
@@ -839,7 +839,7 @@ struct libusb_config_descriptor {
 
 	/** Length of the extra descriptors, in bytes. Must be non-negative. */
 	int extra_length;
-};
+} __attribute__((swift_name("ConfigDescriptor")));
 
 /** \ingroup libusb_desc
  * A structure representing the superspeed endpoint companion
@@ -1162,7 +1162,7 @@ struct libusb_control_setup {
 
 	/** Number of bytes to transfer */
 	uint16_t wLength;
-} LIBUSB_PACKED;
+} LIBUSB_PACKED __attribute__((swift_name("ControlSetup")));
 #if defined(_MSC_VER) || defined(__WATCOMC__)
 #pragma pack(pop)
 #endif
@@ -1196,7 +1196,7 @@ struct libusb_version {
 
 	/** For ABI compatibility only. */
 	const char *describe;
-};
+} __attribute__((swift_name("Version")));
 
 /** \ingroup libusb_lib
  * Structure representing a libusb session. The concept of individual libusb
@@ -1251,26 +1251,26 @@ typedef struct libusb_device_handle libusb_device_handle;
  */
 enum libusb_speed {
 	/** The OS doesn't report or know the device speed. */
-	LIBUSB_SPEED_UNKNOWN = 0,
+	LIBUSB_SPEED_UNKNOWN __attribute__((swift_name("unknown"))) = 0,
 
 	/** The device is operating at low speed (1.5MBit/s). */
-	LIBUSB_SPEED_LOW = 1,
+	LIBUSB_SPEED_LOW __attribute__((swift_name("low"))) = 1,
 
 	/** The device is operating at full speed (12MBit/s). */
-	LIBUSB_SPEED_FULL = 2,
+	LIBUSB_SPEED_FULL __attribute__((swift_name("full"))) = 2,
 
 	/** The device is operating at high speed (480MBit/s). */
-	LIBUSB_SPEED_HIGH = 3,
+	LIBUSB_SPEED_HIGH __attribute__((swift_name("high"))) = 3,
 
 	/** The device is operating at super speed (5000MBit/s). */
-	LIBUSB_SPEED_SUPER = 4,
+	LIBUSB_SPEED_SUPER __attribute__((swift_name("super"))) = 4,
 
 	/** The device is operating at super speed plus (10000MBit/s). */
-	LIBUSB_SPEED_SUPER_PLUS = 5,
+	LIBUSB_SPEED_SUPER_PLUS __attribute__((swift_name("superPlus"))) = 5,
 
 	/** The device is operating at super speed plus x2 (20000MBit/s). */
-	LIBUSB_SPEED_SUPER_PLUS_X2 = 6,
-};
+	LIBUSB_SPEED_SUPER_PLUS_X2 __attribute__((swift_name("superPlusX2"))) = 6,
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("Speed")));
 
 /** \ingroup libusb_misc
  * Error codes. Most libusb functions return 0 on success or one of these
@@ -1281,50 +1281,50 @@ enum libusb_speed {
  */
 enum libusb_error {
 	/** Success (no error) */
-	LIBUSB_SUCCESS = 0,
+	LIBUSB_SUCCESS __attribute__((swift_name("success"))) = 0,
 
 	/** Input/output error */
-	LIBUSB_ERROR_IO = -1,
+	LIBUSB_ERROR_IO __attribute__((swift_name("inputOutputError"))) = -1,
 
 	/** Invalid parameter */
-	LIBUSB_ERROR_INVALID_PARAM = -2,
+	LIBUSB_ERROR_INVALID_PARAM __attribute__((swift_name("invalidParameter"))) = -2,
 
 	/** Access denied (insufficient permissions) */
-	LIBUSB_ERROR_ACCESS = -3,
+	LIBUSB_ERROR_ACCESS __attribute__((swift_name("accessDenied"))) = -3,
 
 	/** No such device (it may have been disconnected) */
-	LIBUSB_ERROR_NO_DEVICE = -4,
+	LIBUSB_ERROR_NO_DEVICE __attribute__((swift_name("noSuchDevice"))) = -4,
 
 	/** Entity not found */
-	LIBUSB_ERROR_NOT_FOUND = -5,
+	LIBUSB_ERROR_NOT_FOUND __attribute__((swift_name("entityNotFound"))) = -5,
 
 	/** Resource busy */
-	LIBUSB_ERROR_BUSY = -6,
+	LIBUSB_ERROR_BUSY __attribute__((swift_name("resourceBusy"))) = -6,
 
 	/** Operation timed out */
-	LIBUSB_ERROR_TIMEOUT = -7,
+	LIBUSB_ERROR_TIMEOUT __attribute__((swift_name("operationTimedOut"))) = -7,
 
 	/** Overflow */
-	LIBUSB_ERROR_OVERFLOW = -8,
+	LIBUSB_ERROR_OVERFLOW __attribute__((swift_name("overflow"))) = -8,
 
 	/** Pipe error */
-	LIBUSB_ERROR_PIPE = -9,
+	LIBUSB_ERROR_PIPE __attribute__((swift_name("pipeError"))) = -9,
 
 	/** System call interrupted (perhaps due to signal) */
-	LIBUSB_ERROR_INTERRUPTED = -10,
+	LIBUSB_ERROR_INTERRUPTED __attribute__((swift_name("systemCallInterrupted"))) = -10,
 
 	/** Insufficient memory */
-	LIBUSB_ERROR_NO_MEM = -11,
+	LIBUSB_ERROR_NO_MEM __attribute__((swift_name("insufficientMemory"))) = -11,
 
 	/** Operation not supported or unimplemented on this platform */
-	LIBUSB_ERROR_NOT_SUPPORTED = -12,
+	LIBUSB_ERROR_NOT_SUPPORTED __attribute__((swift_name("operationNotSupported"))) = -12,
 
 	/* NB: Remember to update LIBUSB_ERROR_COUNT below as well as the
 	   message strings in strerror.c when adding new error codes here. */
 
 	/** Other error */
-	LIBUSB_ERROR_OTHER = -99
-};
+	LIBUSB_ERROR_OTHER __attribute__((swift_name("otherError"))) = -99
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("LibUSBError")));
 
 /* Total number of error codes in enum libusb_error */
 #define LIBUSB_ERROR_COUNT 14
@@ -1353,48 +1353,48 @@ enum libusb_transfer_type {
 enum libusb_transfer_status {
 	/** Transfer completed without error. Note that this does not indicate
 	 * that the entire amount of requested data was transferred. */
-	LIBUSB_TRANSFER_COMPLETED,
+	LIBUSB_TRANSFER_COMPLETED __attribute__((swift_name("completed"))),
 
 	/** Transfer failed */
-	LIBUSB_TRANSFER_ERROR,
+	LIBUSB_TRANSFER_ERROR __attribute__((swift_name("error"))),
 
 	/** Transfer timed out */
-	LIBUSB_TRANSFER_TIMED_OUT,
+	LIBUSB_TRANSFER_TIMED_OUT __attribute__((swift_name("timedOut"))),
 
 	/** Transfer was cancelled */
-	LIBUSB_TRANSFER_CANCELLED,
+	LIBUSB_TRANSFER_CANCELLED __attribute__((swift_name("cancelled"))),
 
 	/** For bulk/interrupt endpoints: halt condition detected (endpoint
 	 * stalled). For control endpoints: control request not supported. */
-	LIBUSB_TRANSFER_STALL,
+	LIBUSB_TRANSFER_STALL __attribute__((swift_name("stall"))),
 
 	/** Device was disconnected */
-	LIBUSB_TRANSFER_NO_DEVICE,
+	LIBUSB_TRANSFER_NO_DEVICE __attribute__((swift_name("noDevice"))),
 
 	/** Device sent more data than requested */
-	LIBUSB_TRANSFER_OVERFLOW
+	LIBUSB_TRANSFER_OVERFLOW __attribute__((swift_name("overflow")))
 
 	/* NB! Remember to update libusb_error_name()
 	   when adding new status codes here. */
-};
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("TransferStatus")));
 
 /** \ingroup libusb_asyncio
  * libusb_transfer.flags values */
 enum libusb_transfer_flags {
 	/** Report short frames as errors */
-	LIBUSB_TRANSFER_SHORT_NOT_OK = (1U << 0),
+	LIBUSB_TRANSFER_SHORT_NOT_OK __attribute__((swift_name("shortNotOk"))) = (1U << 0),
 
 	/** Automatically free() transfer buffer during libusb_free_transfer().
 	 * Note that buffers allocated with libusb_dev_mem_alloc() should not
 	 * be attempted freed in this way, since free() is not an appropriate
 	 * way to release such memory. */
-	LIBUSB_TRANSFER_FREE_BUFFER = (1U << 1),
+	LIBUSB_TRANSFER_FREE_BUFFER __attribute__((swift_name("freeBuffer"))) = (1U << 1),
 
 	/** Automatically call libusb_free_transfer() after callback returns.
 	 * If this flag is set, it is illegal to call libusb_free_transfer()
 	 * from your transfer callback, as this will result in a double-free
 	 * when this flag is acted upon. */
-	LIBUSB_TRANSFER_FREE_TRANSFER = (1U << 2),
+	LIBUSB_TRANSFER_FREE_TRANSFER __attribute__((swift_name("freeTransfer"))) = (1U << 2),
 
 	/** Terminate transfers that are a multiple of the endpoint's
 	 * wMaxPacketSize with an extra zero length packet. This is useful
@@ -1420,8 +1420,8 @@ enum libusb_transfer_flags {
 	 *
 	 * Available since libusb-1.0.9.
 	 */
-	LIBUSB_TRANSFER_ADD_ZERO_PACKET = (1U << 3)
-};
+	LIBUSB_TRANSFER_ADD_ZERO_PACKET __attribute__((swift_name("addZeroPacket"))) = (1U << 3)
+} __attribute__((flag_enum)) __attribute__((swift_name("TransferFlags")));
 
 /** \ingroup libusb_asyncio
  * Isochronous packet descriptor. */
@@ -1514,7 +1514,7 @@ struct libusb_transfer {
 
 	/** Isochronous packet descriptors, for isochronous transfers only. */
 	struct libusb_iso_packet_descriptor iso_packet_desc[LIBUSB_FLEXIBLE_ARRAY];
-};
+} __attribute__((swift_name("LibusbTransfer")));
 
 /** \ingroup libusb_misc
  * Capabilities supported by an instance of libusb on the current running
@@ -1523,41 +1523,41 @@ struct libusb_transfer {
  */
 enum libusb_capability {
 	/** The libusb_has_capability() API is available. */
-	LIBUSB_CAP_HAS_CAPABILITY = 0x0000U,
+	LIBUSB_CAP_HAS_CAPABILITY __attribute__((swift_name("hasCapability"))) = 0x0000U,
 
 	/** Hotplug support is available on this platform. */
-	LIBUSB_CAP_HAS_HOTPLUG = 0x0001U,
+	LIBUSB_CAP_HAS_HOTPLUG __attribute__((swift_name("hasHotplug"))) = 0x0001U,
 
 	/** The library can access HID devices without requiring user intervention.
 	 * Note that before being able to actually access an HID device, you may
 	 * still have to call additional libusb functions such as
 	 * \ref libusb_detach_kernel_driver(). */
-	LIBUSB_CAP_HAS_HID_ACCESS = 0x0100U,
+	LIBUSB_CAP_HAS_HID_ACCESS __attribute__((swift_name("hasHIDAccess"))) = 0x0100U,
 
 	/** The library supports detaching of the default USB driver, using
 	 * \ref libusb_detach_kernel_driver(), if one is set by the OS kernel */
-	LIBUSB_CAP_SUPPORTS_DETACH_KERNEL_DRIVER = 0x0101U
-};
+	LIBUSB_CAP_SUPPORTS_DETACH_KERNEL_DRIVER __attribute__((swift_name("supportsDetachKernelDriver"))) = 0x0101U
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("Capability")));
 
 /** \ingroup libusb_lib
  *  Log message levels.
  */
 enum libusb_log_level {
 	/** (0) : No messages ever emitted by the library (default) */
-	LIBUSB_LOG_LEVEL_NONE = 0,
+	LIBUSB_LOG_LEVEL_NONE __attribute__((swift_name("none"))) = 0,
 
 	/** (1) : Error messages are emitted */
-	LIBUSB_LOG_LEVEL_ERROR = 1,
+	LIBUSB_LOG_LEVEL_ERROR __attribute__((swift_name("error"))) = 1,
 
 	/** (2) : Warning and error messages are emitted */
-	LIBUSB_LOG_LEVEL_WARNING = 2,
+	LIBUSB_LOG_LEVEL_WARNING __attribute__((swift_name("warning"))) = 2,
 
 	/** (3) : Informational, warning and error messages are emitted */
-	LIBUSB_LOG_LEVEL_INFO = 3,
+	LIBUSB_LOG_LEVEL_INFO __attribute__((swift_name("info"))) = 3,
 
 	/** (4) : All messages are emitted */
-	LIBUSB_LOG_LEVEL_DEBUG = 4
-};
+	LIBUSB_LOG_LEVEL_DEBUG __attribute__((swift_name("debug"))) = 4
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("LogLevel")));
 
 /** \ingroup libusb_lib
  *  Log callback mode.
@@ -1568,11 +1568,11 @@ enum libusb_log_level {
  */
 enum libusb_log_cb_mode {
 	/** Callback function handling all log messages. */
-	LIBUSB_LOG_CB_GLOBAL = (1 << 0),
+	LIBUSB_LOG_CB_GLOBAL __attribute__((swift_name("global"))) = (1 << 0),
 
 	/** Callback function handling context related log messages. */
-	LIBUSB_LOG_CB_CONTEXT = (1 << 1)
-};
+	LIBUSB_LOG_CB_CONTEXT __attribute__((swift_name("context"))) = (1 << 1)
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("LogCallbackMode")));
 
 /** \ingroup libusb_lib
  * Available option values for libusb_set_option() and libusb_init_context().
@@ -1600,7 +1600,7 @@ enum libusb_option {
 	 * If libusb was compiled with verbose debug message logging, this option
 	 * does nothing: you'll always get messages from all levels.
 	 */
-	LIBUSB_OPTION_LOG_LEVEL = 0,
+	LIBUSB_OPTION_LOG_LEVEL __attribute__((swift_name("logLevel"))) = 0,
 
 	/** Use the UsbDk backend for a specific context, if available.
 	 *
@@ -1609,7 +1609,7 @@ enum libusb_option {
 	 *
 	 * Only valid on Windows. Ignored on all other platforms.
 	 */
-	LIBUSB_OPTION_USE_USBDK = 1,
+	LIBUSB_OPTION_USE_USBDK __attribute__((swift_name("useUsbDk"))) = 1,
 
 	/** Do not scan for devices
 	 *
@@ -1629,7 +1629,7 @@ enum libusb_option {
 	 *
 	 * Only valid on Linux. Ignored on all other platforms.
 	 */
-	LIBUSB_OPTION_NO_DEVICE_DISCOVERY = 2,
+	LIBUSB_OPTION_NO_DEVICE_DISCOVERY __attribute__((swift_name("noDeviceDiscovery"))) = 2,
 
 #define LIBUSB_OPTION_WEAK_AUTHORITY LIBUSB_OPTION_NO_DEVICE_DISCOVERY
 
@@ -1642,10 +1642,10 @@ enum libusb_option {
 	 * Using it with a non-NULL context is equivalent to calling
 	 * libusb_set_log_cb() with mode \ref LIBUSB_LOG_CB_CONTEXT.
 	 */
-	LIBUSB_OPTION_LOG_CB = 3,
+	LIBUSB_OPTION_LOG_CB __attribute__((swift_name("logCallback"))) = 3,
 
 	LIBUSB_OPTION_MAX = 4
-};
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("Option")));
 
 /** \ingroup libusb_lib
  * Callback function for handling log messages.
@@ -1658,6 +1658,7 @@ enum libusb_option {
  *
  * \see libusb_set_log_cb()
  */
+__attribute__((swift_name("LogCallback")))
 typedef void (LIBUSB_CALL *libusb_log_cb)(libusb_context *ctx,
 	enum libusb_log_level level, const char *str);
 
@@ -1673,7 +1674,7 @@ struct libusb_init_option {
     int ival;
     libusb_log_cb log_cbval;
   } value;
-};
+} __attribute__((swift_name("InitOption")));
 
 int LIBUSB_CALL libusb_init(libusb_context **ctx);
 int LIBUSB_CALL libusb_init_context(libusb_context **ctx, const struct libusb_init_option options[], int num_options);
@@ -2280,21 +2281,21 @@ void LIBUSB_CALL libusb_set_pollfd_notifiers(libusb_context *ctx,
  *
  * For more information, see \ref libusb_hotplug.
  */
-typedef int libusb_hotplug_callback_handle;
+typedef int libusb_hotplug_callback_handle __attribute__((swift_name("HotplugCallbackHandle")));
 
 /** \ingroup libusb_hotplug
  *
  * Since version 1.0.16, \ref LIBUSB_API_VERSION >= 0x01000102
  *
  * Hotplug events */
-typedef enum {
+typedef enum __attribute__((swift_name("HotplugEvent"))) __attribute__((flag_enum)) {
 	/** A device has been plugged in and is ready to use */
-	LIBUSB_HOTPLUG_EVENT_DEVICE_ARRIVED = (1 << 0),
+	LIBUSB_HOTPLUG_EVENT_DEVICE_ARRIVED __attribute__((swift_name("deviceArrived"))) = (1 << 0),
 
 	/** A device has left and is no longer available.
 	 * It is the user's responsibility to call libusb_close on any handle associated with a disconnected device.
 	 * It is safe to call libusb_get_device_descriptor on a device that has left */
-	LIBUSB_HOTPLUG_EVENT_DEVICE_LEFT = (1 << 1)
+	LIBUSB_HOTPLUG_EVENT_DEVICE_LEFT __attribute__((swift_name("deviceLeft"))) = (1 << 1)
 } libusb_hotplug_event;
 
 /** \ingroup libusb_hotplug
@@ -2302,9 +2303,9 @@ typedef enum {
  * Since version 1.0.16, \ref LIBUSB_API_VERSION >= 0x01000102
  *
  * Hotplug flags */
-typedef enum {
+typedef enum __attribute__((swift_name("HotplugFlag"))) __attribute__((flag_enum)) {
 	/** Arm the callback and fire it for all matching currently attached devices. */
-	LIBUSB_HOTPLUG_ENUMERATE = (1 << 0)
+	LIBUSB_HOTPLUG_ENUMERATE __attribute__((swift_name("enumerate"))) = (1 << 0)
 } libusb_hotplug_flag;
 
 /** \ingroup libusb_hotplug
