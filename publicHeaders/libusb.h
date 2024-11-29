@@ -1,0 +1,1 @@
+/Users/konstantin/Desktop/ShutterCheck/Repositories/libusb/libusb/libusb.h
