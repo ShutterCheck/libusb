@@ -670,7 +670,7 @@ struct libusb_endpoint_descriptor {
 
 	/** Length of the extra descriptors, in bytes. Must be non-negative. */
 	int extra_length;
-};
+} __attribute__((swift_name("EndpointDescriptor")));
 
 /** \ingroup libusb_desc
  * A structure representing the standard USB interface association descriptor.
@@ -779,7 +779,7 @@ struct libusb_interface_descriptor {
 
 	/** Length of the extra descriptors, in bytes. Must be non-negative. */
 	int extra_length;
-};
+} __attribute__((swift_name("InterfaceDescriptor")));
 
 /** \ingroup libusb_desc
  * A collection of alternate settings for a particular USB interface.
@@ -787,12 +787,12 @@ struct libusb_interface_descriptor {
 struct libusb_interface {
 	/** Array of interface descriptors. The length of this array is determined
 	 * by the num_altsetting field. */
-	const struct libusb_interface_descriptor *altsetting;
+  const struct libusb_interface_descriptor *altsetting __attribute__((swift_name("altSettings")));
 
 	/** The number of alternate settings that belong to this interface.
 	 * Must be non-negative. */
-	int num_altsetting;
-};
+	int num_altsetting __attribute__((swift_name("numOfAltSettings")));
+} __attribute__((swift_name("Interface")));
 
 /** \ingroup libusb_desc
  * A structure representing the standard USB configuration descriptor. This
