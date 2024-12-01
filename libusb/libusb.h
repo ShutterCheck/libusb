@@ -840,7 +840,7 @@ struct libusb_config_descriptor {
 
 	/** Length of the extra descriptors, in bytes. Must be non-negative. */
 	int extra_length;
-} __attribute__((swift_name("ConfigDescriptor")));
+} __attribute__((swift_name("ConfigurationDescriptor")));
 
 /** \ingroup libusb_desc
  * A structure representing the superspeed endpoint companion
@@ -1325,7 +1325,7 @@ enum libusb_error {
 
 	/** Other error */
 	LIBUSB_ERROR_OTHER __attribute__((swift_name("otherError"))) = -99
-} __attribute__((enum_extensibility(open))) __attribute__((swift_name("LibUSBError")));
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("Error")));
 
 /* Total number of error codes in enum libusb_error */
 #define LIBUSB_ERROR_COUNT 14
@@ -1515,7 +1515,7 @@ struct libusb_transfer {
 
 	/** Isochronous packet descriptors, for isochronous transfers only. */
 	struct libusb_iso_packet_descriptor iso_packet_desc[LIBUSB_FLEXIBLE_ARRAY];
-} __attribute__((swift_name("LibusbTransfer")));
+} __attribute__((swift_name("Transfer")));
 
 /** \ingroup libusb_misc
  * Capabilities supported by an instance of libusb on the current running
@@ -1730,19 +1730,19 @@ __attribute__((swift_name("getDeviceDescriptor(device:deviceDescriptor:)")))
 int LIBUSB_CALL libusb_get_device_descriptor(libusb_device *dev,
 	struct libusb_device_descriptor *desc);
 
-__attribute__((swift_name("getActiveConfigDescriptor(device:configDescriptor:)")))
+__attribute__((swift_name("getActiveConfigurationDescriptor(device:configurationDescriptor:)")))
 int LIBUSB_CALL libusb_get_active_config_descriptor(libusb_device *dev,
 	struct libusb_config_descriptor **config);
 
-__attribute__((swift_name("getConfigDescriptor(device:configIndex:configDescriptor:)")))
+__attribute__((swift_name("getConfigurationDescriptor(device:configurationIndex:configurationDescriptor:)")))
 int LIBUSB_CALL libusb_get_config_descriptor(libusb_device *dev,
 	uint8_t config_index, struct libusb_config_descriptor **config);
 
-__attribute__((swift_name("getConfigDescriptorByValue(device:bConfigurationValue:configDescriptor:)")))
+__attribute__((swift_name("getConfigurationDescriptorByValue(device:bConfigurationValue:configurationDescriptor:)")))
 int LIBUSB_CALL libusb_get_config_descriptor_by_value(libusb_device *dev,
 	uint8_t bConfigurationValue, struct libusb_config_descriptor **config);
 
-__attribute__((swift_name("freeConfigDescriptor(configDescriptor:)")))
+__attribute__((swift_name("freeConfigurationDescriptor(configurationDescriptor:)")))
 void LIBUSB_CALL libusb_free_config_descriptor(
 	struct libusb_config_descriptor *config);
 
