@@ -827,7 +827,7 @@ struct libusb_config_descriptor {
 	 * configuration when the device is fully operation. Expressed in units
 	 * of 2 mA when the device is operating in high-speed mode and in units
 	 * of 8 mA when the device is operating in super-speed mode. */
-	uint8_t  MaxPower;
+	uint8_t  MaxPower __attribute__((swift_name("maxPower")));
 
 	/** Array of interfaces supported by this configuration. The length of
 	 * this array is determined by the bNumInterfaces field. */
