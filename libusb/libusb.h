@@ -1504,7 +1504,7 @@ struct libusb_transfer {
 	 * - libusb_fill_control_transfer()
 	 * - libusb_fill_interrupt_transfer()
 	 * - libusb_fill_iso_transfer() */
-	void *user_data;
+	void *user_data __attribute__((swift_name("userData")));
 
 	/** Data buffer */
 	unsigned char *buffer;
