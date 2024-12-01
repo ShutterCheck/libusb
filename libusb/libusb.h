@@ -190,6 +190,7 @@ extern "C" {
  * \param x the host-endian value to convert
  * \returns the value in little-endian byte order
  */
+__attribute__((swift_name("cpuToLittleEndian16(_:)")))
 static inline uint16_t libusb_cpu_to_le16(const uint16_t x)
 {
 	union {
@@ -1676,37 +1677,75 @@ struct libusb_init_option {
   } value;
 } __attribute__((swift_name("InitOption")));
 
+__attribute__((swift_name("init(context:)")))
 int LIBUSB_CALL libusb_init(libusb_context **ctx);
+
+__attribute__((swift_name("initContext(context:options:numOptions:)")))
 int LIBUSB_CALL libusb_init_context(libusb_context **ctx, const struct libusb_init_option options[], int num_options);
+
+__attribute__((swift_name("exit(context:)")))
 void LIBUSB_CALL libusb_exit(libusb_context *ctx);
+
+__attribute__((swift_name("setDebug(context:level:)")))
 void LIBUSB_CALL libusb_set_debug(libusb_context *ctx, int level);
+
 /* may be deprecated in the future in favor of lubusb_init_context()+libusb_set_option() */
+__attribute__((swift_name("setLogCallback(context:callback:mode:)")))
 void LIBUSB_CALL libusb_set_log_cb(libusb_context *ctx, libusb_log_cb cb, int mode);
+
+__attribute__((swift_name("getVersion()")))
 const struct libusb_version * LIBUSB_CALL libusb_get_version(void);
+
+__attribute__((swift_name("hasCapability(capability:)")))
 int LIBUSB_CALL libusb_has_capability(uint32_t capability);
+
+__attribute__((swift_name("errorName(errorCode:)")))
 const char * LIBUSB_CALL libusb_error_name(int error_code);
+
+__attribute__((swift_name("setLocale(str:)")))
 int LIBUSB_CALL libusb_setlocale(const char *locale);
+
+__attribute__((swift_name("strError(errorCode:)")))
 const char * LIBUSB_CALL libusb_strerror(int errcode);
 
+__attribute__((swift_name("getDeviceList(context:list:)")))
 ssize_t LIBUSB_CALL libusb_get_device_list(libusb_context *ctx,
 	libusb_device ***list);
+
+__attribute__((swift_name("freeDeviceList(list:unrefDevices:)")))
 void LIBUSB_CALL libusb_free_device_list(libusb_device **list,
 	int unref_devices);
+
+__attribute__((swift_name("refDevice()")))
 libusb_device * LIBUSB_CALL libusb_ref_device(libusb_device *dev);
+
+__attribute__((swift_name("unrefDevice()")))
 void LIBUSB_CALL libusb_unref_device(libusb_device *dev);
 
+__attribute__((swift_name("getConfiguration(deviceHandle:config:)")))
 int LIBUSB_CALL libusb_get_configuration(libusb_device_handle *dev,
 	int *config);
+
+__attribute__((swift_name("getDeviceDescriptor(device:deviceDescriptor:)")))
 int LIBUSB_CALL libusb_get_device_descriptor(libusb_device *dev,
 	struct libusb_device_descriptor *desc);
+
+__attribute__((swift_name("getActiveConfigDescriptor(device:configDescriptor:)")))
 int LIBUSB_CALL libusb_get_active_config_descriptor(libusb_device *dev,
 	struct libusb_config_descriptor **config);
+
+__attribute__((swift_name("getConfigDescriptor(device:configIndex:configDescriptor:)")))
 int LIBUSB_CALL libusb_get_config_descriptor(libusb_device *dev,
 	uint8_t config_index, struct libusb_config_descriptor **config);
+
+__attribute__((swift_name("getConfigDescriptorByValue(device:bConfigurationValue:configDescriptor:)")))
 int LIBUSB_CALL libusb_get_config_descriptor_by_value(libusb_device *dev,
 	uint8_t bConfigurationValue, struct libusb_config_descriptor **config);
+
+__attribute__((swift_name("freeConfigDescriptor(configDescriptor:)")))
 void LIBUSB_CALL libusb_free_config_descriptor(
 	struct libusb_config_descriptor *config);
+
 int LIBUSB_CALL libusb_get_ss_endpoint_companion_descriptor(
 	libusb_context *ctx,
 	const struct libusb_endpoint_descriptor *endpoint,
@@ -1744,65 +1783,119 @@ int LIBUSB_CALL libusb_get_platform_descriptor(libusb_context *ctx,
 	struct libusb_platform_descriptor **platform_descriptor);
 void LIBUSB_CALL libusb_free_platform_descriptor(
 	struct libusb_platform_descriptor *platform_descriptor);
+
+__attribute__((swift_name("getBusNumber(device:)")))
 uint8_t LIBUSB_CALL libusb_get_bus_number(libusb_device *dev);
+
+__attribute__((swift_name("getPortNumber(device:)")))
 uint8_t LIBUSB_CALL libusb_get_port_number(libusb_device *dev);
+
+__attribute__((swift_name("getPortNumbers(device:portNumbers:portNumbersLength:)")))
 int LIBUSB_CALL libusb_get_port_numbers(libusb_device *dev, uint8_t *port_numbers, int port_numbers_len);
+
 LIBUSB_DEPRECATED_FOR(libusb_get_port_numbers)
 int LIBUSB_CALL libusb_get_port_path(libusb_context *ctx, libusb_device *dev, uint8_t *path, uint8_t path_length);
+
+__attribute__((swift_name("getParent(device:)")))
 libusb_device * LIBUSB_CALL libusb_get_parent(libusb_device *dev);
+
+__attribute__((swift_name("getDeviceAddress(device:)")))
 uint8_t LIBUSB_CALL libusb_get_device_address(libusb_device *dev);
+
+__attribute__((swift_name("getDeviceSpeed(device:)")))
 int LIBUSB_CALL libusb_get_device_speed(libusb_device *dev);
+
+__attribute__((swift_name("getMaxPacketSize(device:endpoint:)")))
 int LIBUSB_CALL libusb_get_max_packet_size(libusb_device *dev,
 	unsigned char endpoint);
+
+__attribute__((swift_name("getMaxIsoPacketSize(device:endpoint:)")))
 int LIBUSB_CALL libusb_get_max_iso_packet_size(libusb_device *dev,
 	unsigned char endpoint);
+
+__attribute__((swift_name("getMaxAltPacketSize(device:interfaceNumber:alternateSetting:endpoint:)")))
 int LIBUSB_CALL libusb_get_max_alt_packet_size(libusb_device *dev,
 	int interface_number, int alternate_setting, unsigned char endpoint);
 
+__attribute__((swift_name("getInterfaceAssociationDescriptors(device:configIndex:iadArray:)")))
 int LIBUSB_CALL libusb_get_interface_association_descriptors(libusb_device *dev,
 	uint8_t config_index, struct libusb_interface_association_descriptor_array **iad_array);
+
+__attribute__((swift_name("getActiveInterfaceAssociationDescriptors(device:iadArray:)")))
 int LIBUSB_CALL libusb_get_active_interface_association_descriptors(libusb_device *dev,
 	struct libusb_interface_association_descriptor_array **iad_array);
+
+__attribute__((swift_name("freeInterfaceAssociationDescriptors(iadArray:)")))
 void LIBUSB_CALL libusb_free_interface_association_descriptors(
 	struct libusb_interface_association_descriptor_array *iad_array);
 
 int LIBUSB_CALL libusb_wrap_sys_device(libusb_context *ctx, intptr_t sys_dev, libusb_device_handle **dev_handle);
+
+__attribute__((swift_name("open(device:deviceHandle:)")))
 int LIBUSB_CALL libusb_open(libusb_device *dev, libusb_device_handle **dev_handle);
+
+__attribute__((swift_name("close(deviceHandle:)")))
 void LIBUSB_CALL libusb_close(libusb_device_handle *dev_handle);
+
+__attribute__((swift_name("getDevice(deviceHandle:)")))
 libusb_device * LIBUSB_CALL libusb_get_device(libusb_device_handle *dev_handle);
 
+__attribute__((swift_name("setConfiguration(deviceHandle:configuration:)")))
 int LIBUSB_CALL libusb_set_configuration(libusb_device_handle *dev_handle,
 	int configuration);
+
+__attribute__((swift_name("claimInterface(deviceHandle:interfaceNumber:)")))
 int LIBUSB_CALL libusb_claim_interface(libusb_device_handle *dev_handle,
 	int interface_number);
+
+__attribute__((swift_name("releaseInterface(deviceHandle:interfaceNumber:)")))
 int LIBUSB_CALL libusb_release_interface(libusb_device_handle *dev_handle,
 	int interface_number);
 
+__attribute__((swift_name("openDeviceWithVidPid(context:vendorId:productId:)")))
 libusb_device_handle * LIBUSB_CALL libusb_open_device_with_vid_pid(
 	libusb_context *ctx, uint16_t vendor_id, uint16_t product_id);
 
+__attribute__((swift_name("setInterfaceAltSetting(deviceHandle:interfaceNumber:alternateSetting:)")))
 int LIBUSB_CALL libusb_set_interface_alt_setting(libusb_device_handle *dev_handle,
 	int interface_number, int alternate_setting);
+
+__attribute__((swift_name("clearHalt(deviceHandle:endpoint:)")))
 int LIBUSB_CALL libusb_clear_halt(libusb_device_handle *dev_handle,
 	unsigned char endpoint);
+
+__attribute__((swift_name("resetDevice(deviceHandle:)")))
 int LIBUSB_CALL libusb_reset_device(libusb_device_handle *dev_handle);
 
+__attribute__((swift_name("allocStreams(deviceHandle:numStreams:endpoints:numEndpoints:)")))
 int LIBUSB_CALL libusb_alloc_streams(libusb_device_handle *dev_handle,
 	uint32_t num_streams, unsigned char *endpoints, int num_endpoints);
+
+__attribute__((swift_name("freeStreams(deviceHandle:endpoints:numEndpoints:)")))
 int LIBUSB_CALL libusb_free_streams(libusb_device_handle *dev_handle,
 	unsigned char *endpoints, int num_endpoints);
 
+__attribute__((swift_name("devMemAlloc(deviceHandle:length:)")))
 unsigned char * LIBUSB_CALL libusb_dev_mem_alloc(libusb_device_handle *dev_handle,
 	size_t length);
+
+__attribute__((swift_name("devMemFree(deviceHandle:buffer:length:)")))
 int LIBUSB_CALL libusb_dev_mem_free(libusb_device_handle *dev_handle,
 	unsigned char *buffer, size_t length);
 
+__attribute__((swift_name("kernelDriverActive(deviceHandle:interfaceNumber:)")))
 int LIBUSB_CALL libusb_kernel_driver_active(libusb_device_handle *dev_handle,
 	int interface_number);
+
+__attribute__((swift_name("detachKernelDriver(deviceHandle:interfaceNumber:)")))
 int LIBUSB_CALL libusb_detach_kernel_driver(libusb_device_handle *dev_handle,
 	int interface_number);
+
+__attribute__((swift_name("attachKernelDriver(deviceHandle:interfaceNumber:)")))
 int LIBUSB_CALL libusb_attach_kernel_driver(libusb_device_handle *dev_handle,
 	int interface_number);
+
+__attribute__((swift_name("setAutoDetachKernelDriver(deviceHandle:enable:)")))
 int LIBUSB_CALL libusb_set_auto_detach_kernel_driver(
 	libusb_device_handle *dev_handle, int enable);
 
@@ -1820,6 +1913,7 @@ int LIBUSB_CALL libusb_set_auto_detach_kernel_driver(
  * \param transfer a transfer
  * \returns pointer to the first byte of the data section
  */
+__attribute__((swift_name("controlTransferGetData(transfer:)")))
 static inline unsigned char *libusb_control_transfer_get_data(
 	struct libusb_transfer *transfer)
 {
@@ -1838,6 +1932,7 @@ static inline unsigned char *libusb_control_transfer_get_data(
  * \param transfer a transfer
  * \returns a casted pointer to the start of the transfer data buffer
  */
+__attribute__((swift_name("controlTransferGetSetup(transfer:)")))
 static inline struct libusb_control_setup *libusb_control_transfer_get_setup(
 	struct libusb_transfer *transfer)
 {
@@ -1867,6 +1962,7 @@ static inline struct libusb_control_setup *libusb_control_transfer_get_setup(
  * \ref libusb_control_setup::wLength "wLength" field of
  * \ref libusb_control_setup
  */
+__attribute__((swift_name("fillControlSetup(buffer:bmRequestType:bRequest:wValue:wIndex:wLength:)")))
 static inline void libusb_fill_control_setup(unsigned char *buffer,
 	uint8_t bmRequestType, uint8_t bRequest, uint16_t wValue, uint16_t wIndex,
 	uint16_t wLength)
@@ -1879,12 +1975,23 @@ static inline void libusb_fill_control_setup(unsigned char *buffer,
 	setup->wLength = libusb_cpu_to_le16(wLength);
 }
 
+__attribute__((swift_name("allocTransfer(isoPackets:)")))
 struct libusb_transfer * LIBUSB_CALL libusb_alloc_transfer(int iso_packets);
+
+__attribute__((swift_name("submitTransfer(transfer:)")))
 int LIBUSB_CALL libusb_submit_transfer(struct libusb_transfer *transfer);
+
+__attribute__((swift_name("cancelTransfer(transfer:)")))
 int LIBUSB_CALL libusb_cancel_transfer(struct libusb_transfer *transfer);
+
+__attribute__((swift_name("freeTransfer(transfer:)")))
 void LIBUSB_CALL libusb_free_transfer(struct libusb_transfer *transfer);
+
+__attribute__((swift_name("transferSetStreamId(transfer:streamId:)")))
 void LIBUSB_CALL libusb_transfer_set_stream_id(
 	struct libusb_transfer *transfer, uint32_t stream_id);
+
+__attribute__((swift_name("transferGetStreamId(transfer:)")))
 uint32_t LIBUSB_CALL libusb_transfer_get_stream_id(
 	struct libusb_transfer *transfer);
 
@@ -1916,6 +2023,7 @@ uint32_t LIBUSB_CALL libusb_transfer_get_stream_id(
  * \param user_data user data to pass to callback function
  * \param timeout timeout for the transfer in milliseconds
  */
+__attribute__((swift_name("fillControlTransfer(transfer:deviceHandle:buffer:callback:userData:timeout:)")))
 static inline void libusb_fill_control_transfer(
 	struct libusb_transfer *transfer, libusb_device_handle *dev_handle,
 	unsigned char *buffer, libusb_transfer_cb_fn callback, void *user_data,
@@ -1947,6 +2055,7 @@ static inline void libusb_fill_control_transfer(
  * \param user_data user data to pass to callback function
  * \param timeout timeout for the transfer in milliseconds
  */
+__attribute__((swift_name("fillBulkTransfer(transfer:deviceHandle:endpoint:buffer:length:callback:userData:timeout:)")))
 static inline void libusb_fill_bulk_transfer(struct libusb_transfer *transfer,
 	libusb_device_handle *dev_handle, unsigned char endpoint,
 	unsigned char *buffer, int length, libusb_transfer_cb_fn callback,
@@ -1978,6 +2087,7 @@ static inline void libusb_fill_bulk_transfer(struct libusb_transfer *transfer,
  * \param user_data user data to pass to callback function
  * \param timeout timeout for the transfer in milliseconds
  */
+__attribute__((swift_name("fillBulkStreamTransfer(transfer:deviceHandle:endpoint:streamId:buffer:length:callback:userData:timeout:)")))
 static inline void libusb_fill_bulk_stream_transfer(
 	struct libusb_transfer *transfer, libusb_device_handle *dev_handle,
 	unsigned char endpoint, uint32_t stream_id,
@@ -2003,6 +2113,7 @@ static inline void libusb_fill_bulk_stream_transfer(
  * \param user_data user data to pass to callback function
  * \param timeout timeout for the transfer in milliseconds
  */
+__attribute__((swift_name("fillInterruptTransfer(transfer:deviceHandle:endpoint:buffer:length:callback:userData:timeout:)")))
 static inline void libusb_fill_interrupt_transfer(
 	struct libusb_transfer *transfer, libusb_device_handle *dev_handle,
 	unsigned char endpoint, unsigned char *buffer, int length,
@@ -2032,6 +2143,7 @@ static inline void libusb_fill_interrupt_transfer(
  * \param user_data user data to pass to callback function
  * \param timeout timeout for the transfer in milliseconds
  */
+__attribute__((swift_name("fillIsoTransfer(transfer:deviceHandle:endpoint:buffer:length:numIsoPackets:callback:userData:timeout:)")))
 static inline void libusb_fill_iso_transfer(struct libusb_transfer *transfer,
 	libusb_device_handle *dev_handle, unsigned char endpoint,
 	unsigned char *buffer, int length, int num_iso_packets,
@@ -2056,6 +2168,7 @@ static inline void libusb_fill_iso_transfer(struct libusb_transfer *transfer,
  * \param length the length to set in each isochronous packet descriptor
  * \see libusb_get_max_packet_size()
  */
+__attribute__((swift_name("setIsoPacketLengths(transfer:length:)")))
 static inline void libusb_set_iso_packet_lengths(
 	struct libusb_transfer *transfer, unsigned int length)
 {
@@ -2081,6 +2194,7 @@ static inline void libusb_set_iso_packet_lengths(
  * or NULL if the packet does not exist.
  * \see libusb_get_iso_packet_buffer_simple()
  */
+__attribute__((swift_name("getIsoPacketBuffer(transfer:packet:)")))
 static inline unsigned char *libusb_get_iso_packet_buffer(
 	struct libusb_transfer *transfer, unsigned int packet)
 {
@@ -2123,6 +2237,7 @@ static inline unsigned char *libusb_get_iso_packet_buffer(
  * or NULL if the packet does not exist.
  * \see libusb_get_iso_packet_buffer()
  */
+__attribute__((swift_name("getIsoPacketBufferSimple(transfer:packet:)")))
 static inline unsigned char *libusb_get_iso_packet_buffer_simple(
 	struct libusb_transfer *transfer, unsigned int packet)
 {
@@ -2143,14 +2258,17 @@ static inline unsigned char *libusb_get_iso_packet_buffer_simple(
 
 /* sync I/O */
 
+__attribute__((swift_name("controlTransfer(deviceHandle:bmRequestType:bRequest:wValue:wIndex:data:wLength:timeout:)")))
 int LIBUSB_CALL libusb_control_transfer(libusb_device_handle *dev_handle,
 	uint8_t bmRequestType, uint8_t bRequest, uint16_t wValue, uint16_t wIndex,
 	unsigned char *data, uint16_t wLength, unsigned int timeout);
 
+__attribute__((swift_name("bulkTransfer(deviceHandle:endpoint:data:length:transferred:timeout:)")))
 int LIBUSB_CALL libusb_bulk_transfer(libusb_device_handle *dev_handle,
 	unsigned char endpoint, unsigned char *data, int length,
 	int *transferred, unsigned int timeout);
 
+__attribute__((swift_name("interruptTransfer(deviceHandle:endpoint:data:length:transferred:timeout:)")))
 int LIBUSB_CALL libusb_interrupt_transfer(libusb_device_handle *dev_handle,
 	unsigned char endpoint, unsigned char *data, int length,
 	int *transferred, unsigned int timeout);
@@ -2167,6 +2285,7 @@ int LIBUSB_CALL libusb_interrupt_transfer(libusb_device_handle *dev_handle,
  * \param length size of data buffer
  * \returns number of bytes returned in data, or LIBUSB_ERROR code on failure
  */
+__attribute__((swift_name("getDescriptor(deviceHandle:descType:descIndex:data:length:)")))
 static inline int libusb_get_descriptor(libusb_device_handle *dev_handle,
 	uint8_t desc_type, uint8_t desc_index, unsigned char *data, int length)
 {
@@ -2189,6 +2308,7 @@ static inline int libusb_get_descriptor(libusb_device_handle *dev_handle,
  * \returns number of bytes returned in data, or LIBUSB_ERROR code on failure
  * \see libusb_get_string_descriptor_ascii()
  */
+__attribute__((swift_name("getStringDescriptor(deviceHandle:descIndex:languageId:data:length:)")))
 static inline int libusb_get_string_descriptor(libusb_device_handle *dev_handle,
 	uint8_t desc_index, uint16_t langid, unsigned char *data, int length)
 {
@@ -2197,30 +2317,61 @@ static inline int libusb_get_string_descriptor(libusb_device_handle *dev_handle,
 		langid, data, (uint16_t) length, 1000);
 }
 
+__attribute__((swift_name("getStringDescriptorASCII(deviceHandle:descIndex:data:length:)")))
 int LIBUSB_CALL libusb_get_string_descriptor_ascii(libusb_device_handle *dev_handle,
 	uint8_t desc_index, unsigned char *data, int length);
 
 /* polling and timeouts */
 
+__attribute__((swift_name("tryLockEvents(context:)")))
 int LIBUSB_CALL libusb_try_lock_events(libusb_context *ctx);
+
+__attribute__((swift_name("lockEvents(context:)")))
 void LIBUSB_CALL libusb_lock_events(libusb_context *ctx);
+
+__attribute__((swift_name("unlockEvents(context:)")))
 void LIBUSB_CALL libusb_unlock_events(libusb_context *ctx);
+
+__attribute__((swift_name("eventHandlingOk(context:)")))
 int LIBUSB_CALL libusb_event_handling_ok(libusb_context *ctx);
+
+__attribute__((swift_name("eventHandlerActive(context:)")))
 int LIBUSB_CALL libusb_event_handler_active(libusb_context *ctx);
+
+__attribute__((swift_name("interruptEventHandler(context:)")))
 void LIBUSB_CALL libusb_interrupt_event_handler(libusb_context *ctx);
+
+__attribute__((swift_name("lockEventWaiters(context:)")))
 void LIBUSB_CALL libusb_lock_event_waiters(libusb_context *ctx);
+
+__attribute__((swift_name("unlockEventWaiters(context:)")))
 void LIBUSB_CALL libusb_unlock_event_waiters(libusb_context *ctx);
+
+__attribute__((swift_name("waitForEvent(context:timeval:)")))
 int LIBUSB_CALL libusb_wait_for_event(libusb_context *ctx, struct timeval *tv);
 
+__attribute__((swift_name("handleEventsTimeout(context:timeval:)")))
 int LIBUSB_CALL libusb_handle_events_timeout(libusb_context *ctx,
 	struct timeval *tv);
+
+__attribute__((swift_name("handleEventsTimeoutCompleted(context:timeval:completed:)")))
 int LIBUSB_CALL libusb_handle_events_timeout_completed(libusb_context *ctx,
 	struct timeval *tv, int *completed);
+
+__attribute__((swift_name("handleEvents(context:)")))
 int LIBUSB_CALL libusb_handle_events(libusb_context *ctx);
+
+__attribute__((swift_name("handleEventsCompleted(context:completed:)")))
 int LIBUSB_CALL libusb_handle_events_completed(libusb_context *ctx, int *completed);
+
+__attribute__((swift_name("handleEventsLocked(context:timeval:)")))
 int LIBUSB_CALL libusb_handle_events_locked(libusb_context *ctx,
 	struct timeval *tv);
+
+__attribute__((swift_name("pollFdsHandleTimeouts(context:)")))
 int LIBUSB_CALL libusb_pollfds_handle_timeouts(libusb_context *ctx);
+
+__attribute__((swift_name("getNextTimeout(context:timeval:)")))
 int LIBUSB_CALL libusb_get_next_timeout(libusb_context *ctx,
 	struct timeval *tv);
 
@@ -2376,6 +2527,7 @@ typedef int (LIBUSB_CALL *libusb_hotplug_callback_fn)(libusb_context *ctx,
  * \param[out] callback_handle pointer to store the handle of the allocated callback (can be NULL)
  * \returns \ref LIBUSB_SUCCESS on success LIBUSB_ERROR code on failure
  */
+__attribute__((swift_name("hotplugRegisterCallback(context:events:flags:vendorId:productId:devClass:callback:userData:callbackHandle:)")))
 int LIBUSB_CALL libusb_hotplug_register_callback(libusb_context *ctx,
 	int events, int flags,
 	int vendor_id, int product_id, int dev_class,
@@ -2393,6 +2545,7 @@ int LIBUSB_CALL libusb_hotplug_register_callback(libusb_context *ctx,
  * \param[in] ctx context this callback is registered with
  * \param[in] callback_handle the handle of the callback to deregister
  */
+__attribute__((swift_name("hotplugDeregisterCallback(context:callbackHandle:)")))
 void LIBUSB_CALL libusb_hotplug_deregister_callback(libusb_context *ctx,
 	libusb_hotplug_callback_handle callback_handle);
 
@@ -2404,6 +2557,7 @@ void LIBUSB_CALL libusb_hotplug_deregister_callback(libusb_context *ctx,
  * \param[in] ctx context this callback is registered with
  * \param[in] callback_handle the handle of the callback to get the user_data of
  */
+__attribute__((swift_name("hotplugGetUserData(context:callbackHandle:)")))
 void * LIBUSB_CALL libusb_hotplug_get_user_data(libusb_context *ctx,
 	libusb_hotplug_callback_handle callback_handle);
 
