@@ -730,7 +730,7 @@ struct libusb_interface_association_descriptor_array {
 
 	/** Number of interface association descriptors contained. Read-only. */
 	int length;
-};
+} __attribute__((swift_name("InterfaceAssociationDescriptorArray")));
 
 /** \ingroup libusb_desc
  * A structure representing the standard USB interface descriptor. This
