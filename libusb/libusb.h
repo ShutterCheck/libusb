@@ -1334,20 +1334,20 @@ enum libusb_error {
  * Transfer type */
 enum libusb_transfer_type {
 	/** Control transfer */
-	LIBUSB_TRANSFER_TYPE_CONTROL = 0U,
+	LIBUSB_TRANSFER_TYPE_CONTROL __attribute__((swift_name("control"))) = 0U,
 
 	/** Isochronous transfer */
-	LIBUSB_TRANSFER_TYPE_ISOCHRONOUS = 1U,
+	LIBUSB_TRANSFER_TYPE_ISOCHRONOUS __attribute__((swift_name("isochronous"))) = 1U,
 
 	/** Bulk transfer */
-	LIBUSB_TRANSFER_TYPE_BULK = 2U,
+	LIBUSB_TRANSFER_TYPE_BULK __attribute__((swift_name("bulk"))) = 2U,
 
 	/** Interrupt transfer */
-	LIBUSB_TRANSFER_TYPE_INTERRUPT = 3U,
+	LIBUSB_TRANSFER_TYPE_INTERRUPT __attribute__((swift_name("interrupt"))) = 3U,
 
 	/** Bulk stream transfer */
-	LIBUSB_TRANSFER_TYPE_BULK_STREAM = 4U
-};
+	LIBUSB_TRANSFER_TYPE_BULK_STREAM __attribute__((swift_name("bulkStream"))) = 4U
+} __attribute__((enum_extensibility(open))) __attribute__((swift_name("TransferType")));
 
 /** \ingroup libusb_asyncio
  * Transfer status codes */
@@ -1448,6 +1448,7 @@ struct libusb_transfer;
  * \param transfer The libusb_transfer struct the callback function is being
  * notified about.
  */
+__attribute__((swift_name("TransferCallbackFn")))
 typedef void (LIBUSB_CALL *libusb_transfer_cb_fn)(struct libusb_transfer *transfer);
 
 /** \ingroup libusb_asyncio
@@ -1458,7 +1459,7 @@ typedef void (LIBUSB_CALL *libusb_transfer_cb_fn)(struct libusb_transfer *transf
  */
 struct libusb_transfer {
 	/** Handle of the device that this transfer will be submitted to */
-	libusb_device_handle *dev_handle;
+	libusb_device_handle *dev_handle __attribute__((swift_name("deviceHandle")));
 
 	/** A bitwise OR combination of \ref libusb_transfer_flags. */
 	uint8_t flags;
@@ -1488,7 +1489,7 @@ struct libusb_transfer {
 	/** Actual length of data that was transferred. Read-only, and only for
 	 * use within transfer callback function. Not valid for isochronous
 	 * endpoint transfers. */
-	int actual_length;
+	int actual_length __attribute__((swift_name("actualLength")));
 
 	/** Callback function. This will be invoked when the transfer completes,
 	 * fails, or is cancelled. */
@@ -1511,7 +1512,7 @@ struct libusb_transfer {
 
 	/** Number of isochronous packets. Only used for I/O with isochronous
 	 * endpoints. Must be non-negative. */
-	int num_iso_packets;
+	int num_iso_packets __attribute__((swift_name("numIsoPackets")));
 
 	/** Isochronous packet descriptors, for isochronous transfers only. */
 	struct libusb_iso_packet_descriptor iso_packet_desc[LIBUSB_FLEXIBLE_ARRAY];
