@@ -18,6 +18,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_DARWIN_FLAVOUR)
+
 #ifndef LIBUSB_EVENTS_POSIX_H
 #define LIBUSB_EVENTS_POSIX_H
 
@@ -60,3 +62,5 @@ static inline int usbi_timer_valid(usbi_timer_t *timer)
 #endif
 
 #endif
+
+#endif // LIBUSB_DARWIN_FLAVOUR

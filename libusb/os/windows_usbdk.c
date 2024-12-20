@@ -21,6 +21,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_WINDOWS_FLAVOUR)
+
 #include <config.h>
 
 #include <windows.h>
@@ -722,3 +724,5 @@ const struct windows_backend usbdk_backend = {
 	usbdk_clear_transfer_priv,
 	usbdk_copy_transfer_data,
 };
+
+#endif // LIBUSB_WINDOWS_FLAVOUR

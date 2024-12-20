@@ -1,5 +1,7 @@
 /* config.h.  Manually generated for Xcode.  */
 
+#if defined(LIBUSB_DARWIN_FLAVOUR)
+
 #include <AvailabilityMacros.h>
 
 /* Define to the attribute for default visibility. */
@@ -29,3 +31,5 @@
 
 /* Enable GNU extensions. */
 #define _GNU_SOURCE 1
+
+#endif // LIBUSB_DARWIN_FLAVOUR

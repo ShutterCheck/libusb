@@ -22,6 +22,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_WINDOWS_FLAVOUR)
+
 #include <config.h>
 
 #include <stdio.h>
@@ -921,3 +923,5 @@ const struct usbi_os_backend usbi_backend = {
 	sizeof(struct windows_device_handle_priv),
 	sizeof(struct windows_transfer_priv),
 };
+
+#endif // LIBUSB_WINDOWS_FLAVOUR

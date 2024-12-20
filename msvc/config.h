@@ -1,5 +1,7 @@
 /* config.h.  Manual config for MSVC.  */
 
+#if defined(LIBUSB_WINDOWS_FLAVOUR)
+
 #ifndef _MSC_VER
 #warn "msvc/config.h shouldn't be included for your development environment."
 #error "Please make sure the msvc/ directory is removed from your build path."
@@ -56,3 +58,5 @@
 
 /* Define to 1 to output logging messages to the systemwide log. */
 /* #undef USE_SYSTEM_LOGGING_FACILITY */
+
+#endif // LIBUSB_WINDOWS_FLAVOUR

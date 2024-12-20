@@ -18,6 +18,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_DARWIN_FLAVOUR)
+
 #ifndef LIBUSB_THREADS_POSIX_H
 #define LIBUSB_THREADS_POSIX_H
 
@@ -96,3 +98,5 @@ static inline void usbi_tls_key_delete(usbi_tls_key_t key)
 unsigned long usbi_get_tid(void);
 
 #endif /* LIBUSB_THREADS_POSIX_H */
+
+#endif // LIBUSB_DARWIN_FLAVOUR

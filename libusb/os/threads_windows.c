@@ -19,6 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_WINDOWS_FLAVOUR)
+
 #include "libusbi.h"
 
 int usbi_cond_timedwait(usbi_cond_t *cond,
@@ -38,3 +40,5 @@ int usbi_cond_timedwait(usbi_cond_t *cond,
 	else
 		return LIBUSB_ERROR_OTHER;
 }
+
+#endif // LIBUSB_WINDOWS_FLAVOUR

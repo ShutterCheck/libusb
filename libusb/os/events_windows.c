@@ -18,6 +18,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_WINDOWS_FLAVOUR)
+
 #include <config.h>
 
 #include "libusbi.h"
@@ -212,3 +214,5 @@ done:
 	reported_events->num_ready = 0;
 	return LIBUSB_SUCCESS;
 }
+
+#endif // LIBUSB_WINDOWS_FLAVOUR

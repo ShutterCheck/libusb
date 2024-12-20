@@ -23,6 +23,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_WINDOWS_FLAVOUR)
+
 #include <config.h>
 
 #include <windows.h>
@@ -4764,3 +4766,5 @@ static enum libusb_transfer_status composite_copy_transfer_data(int sub_api, str
 	return priv->usb_interface[current_interface].apib->
 		copy_transfer_data(priv->usb_interface[current_interface].sub_api, itransfer, length);
 }
+
+#endif // LIBUSB_WINDOWS_FLAVOUR

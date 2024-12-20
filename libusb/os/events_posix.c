@@ -18,6 +18,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_DARWIN_FLAVOUR)
+
 #include "libusbi.h"
 
 #include <errno.h>
@@ -338,3 +340,5 @@ done:
 	reported_events->num_ready = num_ready;
 	return LIBUSB_SUCCESS;
 }
+
+#endif // LIBUSB_DARWIN_FLAVOUR

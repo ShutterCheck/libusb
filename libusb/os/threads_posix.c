@@ -19,6 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_DARWIN_FLAVOUR)
+
 #include "libusbi.h"
 
 #include <errno.h>
@@ -124,3 +126,5 @@ unsigned long usbi_get_tid(void)
 
 	return tl_tid = tid;
 }
+
+#endif // LIBUSB_DARWIN_FLAVOUR

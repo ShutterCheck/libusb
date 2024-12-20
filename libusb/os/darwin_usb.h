@@ -18,6 +18,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_DARWIN_FLAVOUR)
+
 #if !defined(LIBUSB_DARWIN_H)
 #define LIBUSB_DARWIN_H
 
@@ -154,3 +156,5 @@ struct darwin_transfer_priv {
 };
 
 #endif
+
+#endif // LIBUSB_DARWIN_FLAVOUR

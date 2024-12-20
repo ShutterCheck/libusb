@@ -18,6 +18,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_WINDOWS_FLAVOUR)
+
 #ifndef LIBUSB_THREADS_WINDOWS_H
 #define LIBUSB_THREADS_WINDOWS_H
 
@@ -111,3 +113,5 @@ static inline unsigned long usbi_get_tid(void)
 }
 
 #endif /* LIBUSB_THREADS_WINDOWS_H */
+
+#endif // LIBUSB_WINDOWS_FLAVOUR

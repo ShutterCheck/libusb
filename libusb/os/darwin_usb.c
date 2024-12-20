@@ -19,6 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#if defined(LIBUSB_DARWIN_FLAVOUR)
+
 #include <config.h>
 #include <assert.h>
 #include <time.h>
@@ -2976,3 +2978,5 @@ const struct usbi_os_backend usbi_backend = {
         .device_handle_priv_size = sizeof(struct darwin_device_handle_priv),
         .transfer_priv_size = sizeof(struct darwin_transfer_priv),
 };
+
+#endif // LIBUSB_DARWIN_FLAVOUR

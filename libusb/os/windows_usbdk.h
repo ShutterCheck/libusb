@@ -21,6 +21,8 @@
 * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
+#if defined(LIBUSB_WINDOWS_FLAVOUR)
+
 #ifndef LIBUSB_WINDOWS_USBDK_H
 #define LIBUSB_WINDOWS_USBDK_H
 
@@ -104,3 +106,5 @@ typedef HANDLE (__cdecl *USBDK_GET_REDIRECTOR_SYSTEM_HANDLE)(
 );
 
 #endif
+
+#endif // LIBUSB_WINDOWS_FLAVOUR
